@@ -1,0 +1,165 @@
+body {
+  /* background-color: #f0f0f0; */
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+  color: #4520ab;
+}
+
+.input-button-container {
+  position: relative;
+  display: inline-block;
+  width: 500px;
+  height: 56px;
+  margin-top: 90px;
+}
+
+input[type="text"] {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  width: 492px;
+  height: 56px;
+  border: 2px solid #111;
+  border-radius: 14px;
+  /* padding-left: 10px; */
+}
+
+.input-button-container button {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.clear-btn {
+  background-color: #adadad;
+  color: #0f0f0f;
+}
+
+.dictionary {
+  /* border: 1px solid #ccc; */
+  /* border-radius: 8px; */
+  display: flex;
+  width: 500px;
+  margin: 60px 0;
+}
+
+.dictionary div {
+  /* border: 1px solid #ccc;  */
+  width: 94%;
+  /* padding: 8px; */
+  overflow: hidden;
+}
+
+.cyrillic-dictionary {
+  background-color: #f0f0f0;
+  border-right: 2px solid #111;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.latin-dictionary {
+  background-color: #d9d9d9;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.cyrillic-dictionary div + div,
+.latin-dictionary div + div {
+  border-top: 1px solid #111;
+}
+
+.word {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* border-bottom: 1px solid #111; */
+}
+
+.truncated {
+  position: relative; /* Позволяет позиционировать дочерние элементы относительно этого элемента */
+}
+
+.tooltip {
+  display: none; /* Скрываем по умолчанию */
+  position: absolute; /* Позволяет разместить элемент вне родителя */
+  background-color: rgb(255, 255, 255); /* Фон подсказки */
+  color: #111; /* Цвет текста */
+  padding: 9px; /* Отступы */
+  border-radius: 9px; /* Скругление углов */
+  z-index: 100; /* Убедитесь, что подсказка выше других элементов */
+  bottom: -9px; /* Позиционирование под родителем */
+  left: 100px; /* Выравнивание по левому краю родителя */
+  /* white-space: nowrap; Запрет на перенос текста */
+}
+
+.truncated:hover .tooltip {
+  display: block; /* Показываем подсказку при наведении на родительский элемент */
+  /* overflow: visible; */
+}
+
+/* .word span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.word:hover span {
+  overflow: visible;
+  white-space: normal;
+} */
+
+.word .delete-button {
+  cursor: pointer;
+  color: red;
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  input[type="text"] {
+    font-size: 15px;
+    width: 328px;
+  }
+
+  .input-button-container {
+    width: 328px;
+  }
+
+  .input-button-container button {
+    right: 0px;
+  }
+
+  .dictionary {
+    width: 328px;
+  }
+
+  .tooltip {
+    left: 0;
+  }
+}
